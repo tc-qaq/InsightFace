@@ -35,6 +35,7 @@ Conv25(out_c=256,in_c=256,kernerl=3,pad=1,stride=1)-BN()-ReLU()
 Conv26(out_c=256,in_c=256,kernerl=1,pad=0,stride=1)-BN()-ReLU()
 
 rf_c3_latteral(conv1x1,out=64)-BN-ReLU   ------------------------------- followed by Conv26
+
 rf_c3_det_conv1(conv3x3,out=32)-BN
 rf_c3_det_context_conv1(conv3x3,out=16)-BN-ReLU
 rf_c3_det_context_conv2(conv3x3,out=16)-BN
@@ -47,6 +48,7 @@ face_rpn_landmark_pred_stride32(conv1x1,out=20)
 
 
 rf_c2_lateral(conv1x1,out=64)-BN-ReLU   ---------------------------------- followed by Conv22
+
 rf_c3_UpSampling(2)-Crop()-elemwiseAdd()
 rf_c2_aggr(conv3x3,out=64)-BN-ReLU
 rf_c2_det_conv1(conv3x3,out=32)-BN
@@ -61,6 +63,7 @@ face_rpn_landmark_pred_stride16(conv1x1,out=20)
 
 
 rf_c2_lateral(conv1x1,out=64)-BN-ReLU   ---------------------------------- followed by Conv10
+
 rf_c2_upsampling(2)-Crop()-elemwiseAdd()
 rf_c1_aggr(conv3x3,out=64)-BN-ReLU
 rf_c1_det_conv1(conv3x3,out=32)-BN
