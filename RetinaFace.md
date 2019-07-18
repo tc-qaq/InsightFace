@@ -62,7 +62,7 @@ face_rpn_bbox_pred_stride16(conv1x1,out=8)
 face_rpn_landmark_pred_stride16(conv1x1,out=20)
 
 
-rf_c2_lateral(conv1x1,out=64)-BN-ReLU   ---------------------------------- followed by Conv10
+rf_c1_lateral(conv1x1,out=64)-BN-ReLU   ---------------------------------- followed by Conv10
 
 rf_c2_upsampling(2)-Crop()-elemwiseAdd()
 rf_c1_aggr(conv3x3,out=64)-BN-ReLU
